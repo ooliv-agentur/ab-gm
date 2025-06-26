@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-50">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,64 +38,77 @@ const Index = () => {
       </nav>
 
       {/* Hero Section - Full Height */}
-      <section className="h-screen flex items-center justify-center bg-gray-100">
+      <section className="h-screen flex items-center justify-center bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-6xl font-bold text-gray-900 mb-8">
-            Klar. Erfahren. Zertifiziert.
+            Klarheit, Verantwortung, Hygiene.
           </h1>
-          <p className="text-2xl text-gray-700 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Ihr Partner für Hygieneinspektionen, Gefährdungsanalysen & Laboruntersuchungen – gemäß VDI 6022, VDI 6023, VDI 2047 & TrinkwV.
+          <p className="text-2xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
+            AB GM – Ihr zertifizierter Partner für Hygieneinspektionen, Gefährdungsanalysen und Laboruntersuchungen nach VDI 6022, VDI 6023, VDI 2047 und TrinkwV.
           </p>
-          <div className="max-w-5xl mx-auto text-lg leading-relaxed text-gray-600">
-            <p className="mb-6">
-              AB GM ist ein unabhängiges Ingenieurbüro für Lufthygiene und Wasserhygiene mit Sitz in Mannheim. Wir prüfen Ihre Anlagen auf gesetzlich vorgeschriebene Hygieneanforderungen – schnell, zuverlässig und nach Stand der Technik.
+          <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto font-medium">
+            Wir sichern Ihre Anlagenhygiene – unabhängig, nachvollziehbar und rechtssicher.
+          </p>
+          <Button className="bg-gray-800 text-white px-8 py-3 text-lg hover:bg-gray-700">
+            Jetzt beraten lassen
+          </Button>
+        </div>
+      </section>
+
+      {/* Intro Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+              Viele Betreiber wissen: Hygieneprüfungen sind Pflicht – aber die Umsetzung ist komplex.
+              Als unabhängiges Ingenieurbüro helfen wir Ihnen dabei, gesetzliche Vorgaben zuverlässig zu erfüllen und Risiken zu vermeiden. Wir prüfen Ihre Anlagen, analysieren relevante Hygienedaten und liefern klare Ergebnisse mit konkreten Empfehlungen – für Ihre Sicherheit und die Ihrer Nutzer.
             </p>
-            <p>
-              Ob RLT-Anlage, Trinkwasserinstallation oder Rückkühlwerk: Wir helfen Ihnen, Betreiberpflichten rechtskonform zu erfüllen – mit klaren Ergebnissen, nachvollziehbaren Berichten und langjähriger Erfahrung.
+            <p className="text-xl font-medium text-gray-900">
+              RLT-Anlage, Trinkwasser, Rückkühlwerk – wir prüfen, analysieren, dokumentieren.
             </p>
           </div>
         </div>
       </section>
 
       {/* Benefits Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Ihre Vorteile mit AB GM</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center border-2 border-gray-200 bg-white">
+            <Card className="text-center border border-gray-300 bg-white shadow-none">
               <CardHeader>
-                <Shield className="h-12 w-12 mx-auto text-gray-600 mb-4" />
-                <CardTitle className="text-xl text-gray-900">Rechtssicherheit & Compliance</CardTitle>
+                <Shield className="h-12 w-12 mx-auto text-gray-500 mb-4" />
+                <CardTitle className="text-xl text-gray-900">Rechtssicherheit & Nachvollziehbarkeit</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base text-gray-600">
-                  Hygieneprüfungen nach VDI-Richtlinien und gesetzlichen Vorgaben – zuverlässig, dokumentiert, rechtssicher.
+                <CardDescription className="text-base text-gray-700">
+                  Hygieneprüfungen nach VDI 6022, 6023, 2047 & TrinkwV – mit klarer Dokumentation für Behörden & Betreiberpflicht.
                 </CardDescription>
               </CardContent>
             </Card>
 
-            <Card className="text-center border-2 border-gray-200 bg-white">
+            <Card className="text-center border border-gray-300 bg-white shadow-none">
               <CardHeader>
-                <Award className="h-12 w-12 mx-auto text-gray-600 mb-4" />
+                <Award className="h-12 w-12 mx-auto text-gray-500 mb-4" />
                 <CardTitle className="text-xl text-gray-900">Anerkannte Fachkompetenz</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base text-gray-600">
-                  Schulung nach VDI 6022, 6023, 2047 sowie TÜV-zertifizierter Fachberater für Schimmelpilzschäden.
+                <CardDescription className="text-base text-gray-700">
+                  Zertifizierter Probenehmer, TÜV-geprüfter Fachberater für Schimmelpilz – praxisnahe Beratung auf höchstem Niveau.
                 </CardDescription>
               </CardContent>
             </Card>
 
-            <Card className="text-center border-2 border-gray-200 bg-white">
+            <Card className="text-center border border-gray-300 bg-white shadow-none">
               <CardHeader>
-                <CheckCircle className="h-12 w-12 mx-auto text-gray-600 mb-4" />
-                <CardTitle className="text-xl text-gray-900">Schnelle Ergebnisse & klare Empfehlungen</CardTitle>
+                <CheckCircle className="h-12 w-12 mx-auto text-gray-500 mb-4" />
+                <CardTitle className="text-xl text-gray-900">Effizient & lösungsorientiert</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base text-gray-600">
-                  Aussagekräftige Berichte mit Fotodokumentation, Gefährdungsanalyse und konkreten Handlungsvorgaben.
+                <CardDescription className="text-base text-gray-700">
+                  Schnelle Ergebnisse mit Fotodokumentation, Laborwerten und konkreten Handlungsempfehlungen.
                 </CardDescription>
               </CardContent>
             </Card>
@@ -104,62 +117,62 @@ const Index = () => {
       </section>
 
       {/* Service Overview */}
-      <section className="py-24 bg-gray-100">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Unsere Leistungsbereiche</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 border-2 border-gray-200">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Lufthygiene</h3>
+            <div className="bg-gray-50 p-8 border border-gray-300">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Lufthygiene (RLT-Anlagen)</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <ArrowRight className="h-5 w-5 text-gray-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Hygieneinspektionen nach VDI 6022</span>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="h-5 w-5 text-gray-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Luftkeimmessungen & Raumluftanalysen</span>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="h-5 w-5 text-gray-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Gefährdungsbeurteilungen & Gutachten</span>
                 </li>
               </ul>
             </div>
 
-            <div className="bg-white p-8 border-2 border-gray-200">
+            <div className="bg-gray-50 p-8 border border-gray-300">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Trinkwasserhygiene</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <ArrowRight className="h-5 w-5 text-gray-600 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Legionellenprüfung nach TrinkwV</span>
+                  <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Legionellenprüfung gemäß Trinkwasserverordnung</span>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="h-5 w-5 text-gray-600 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Hygieneinspektion VDI 6023</span>
+                  <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Hygieneinspektion nach VDI 6023</span>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="h-5 w-5 text-gray-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Gefährdungsanalyse bei Grenzwertüberschreitung</span>
                 </li>
               </ul>
             </div>
 
-            <div className="bg-white p-8 border-2 border-gray-200">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Kühlwasserhygiene</h3>
+            <div className="bg-gray-50 p-8 border border-gray-300">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Kühlwasserhygiene (Rückkühlwerke)</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <ArrowRight className="h-5 w-5 text-gray-600 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Legionellenprüfung & Laboranalytik</span>
+                  <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Hygieneprüfungen gemäß 42. BImSchV</span>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="h-5 w-5 text-gray-600 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Hygieneinspektion nach VDI 2047</span>
+                  <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Laboranalytik und Gefährdungsbeurteilung</span>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="h-5 w-5 text-gray-600 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Gefährdungsbeurteilung gem. 42. BImSchV</span>
+                  <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">VDI 2047-konforme Dokumentation</span>
                 </li>
               </ul>
             </div>
@@ -168,30 +181,42 @@ const Index = () => {
       </section>
 
       {/* Regulatory Compliance */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-gray-900 mb-8">Recht & Betreiberpflichten</h2>
+            <p className="text-xl font-medium text-gray-900 mb-6">
+              Gesetzliche Pflicht – technisches Risiko – persönliche Verantwortung.
+            </p>
+            <p className="text-lg leading-relaxed text-gray-700 mb-8">
+              Als Betreiber von raumluft- oder wassertechnischen Anlagen sind Sie gesetzlich verpflichtet, regelmäßige Hygieneprüfungen durchzuführen. Wir unterstützen Sie bei der Erfüllung aller Anforderungen gemäß:
+            </p>
+            <ul className="text-lg text-gray-700 mb-8 space-y-2">
+              <li><strong>Trinkwasserverordnung (TrinkwV)</strong></li>
+              <li><strong>VDI-Richtlinien 6022, 6023, 2047</strong></li>
+              <li><strong>42. Bundesimmissionsschutzverordnung (BImSchV)</strong></li>
+            </ul>
             <p className="text-lg leading-relaxed text-gray-700">
-              Betreiber von raumluft- und wassertechnischen Anlagen sind gesetzlich verpflichtet, regelmäßig Hygieneprüfungen durchzuführen. Wir unterstützen Sie bei der Umsetzung aller Anforderungen gemäß Trinkwasserverordnung, VDI 6022, 6023, 2047 und der 42. BImSchV. Damit Sie auf der sicheren Seite sind – gegenüber Gesundheitsämtern, Berufsgenossenschaften und Ihren Mitarbeitenden.
+              Wir beraten neutral, handeln dokumentiert und helfen Ihnen, im Falle einer Kontrolle alle Nachweise parat zu haben.
             </p>
           </div>
         </div>
       </section>
 
       {/* Trust & Qualification */}
-      <section className="py-24 bg-gray-100">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Vertrauen & Qualifikation</h2>
+              <p className="text-xl font-medium text-gray-900 mb-8">Erfahrung, die Verantwortung trägt.</p>
             </div>
-            <div className="bg-white p-8 border-2 border-gray-200">
+            <div className="bg-gray-50 p-8 border border-gray-300">
               <div className="flex items-start">
-                <Users className="h-12 w-12 text-gray-600 mr-6 mt-1 flex-shrink-0" />
+                <Users className="h-12 w-12 text-gray-500 mr-6 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-lg leading-relaxed text-gray-700">
-                    AB GM wird geleitet von <strong>Andreas Stefan Bartsch</strong>, Diplom-Ingenieur (FH) mit jahrzehntelanger Erfahrung in Anlagenhygiene, Gefahrstoffmessung und Betreiberberatung. Als akkreditierter Probenehmer und TÜV-zertifizierter Fachberater stehen wir für sachkundige, praxisnahe Prüfung und Beratung – unabhängig, nachvollziehbar, lösungsorientiert.
+                    AB GM wird geleitet von <strong>Andreas Stefan Bartsch</strong>, Diplom-Ingenieur (FH) mit jahrzehntelanger Erfahrung in Hygieneanalytik und Betreiberberatung. Als akkreditierter Probenehmer und TÜV-zertifizierter Fachberater für Schimmelpilzschäden begleitet er Sie fachlich, rechtssicher und unabhängig.
                   </p>
                 </div>
               </div>
@@ -201,14 +226,14 @@ const Index = () => {
       </section>
 
       {/* Contact CTA */}
-      <section id="contact" className="py-24 bg-white border-t-4 border-gray-300">
+      <section id="contact" className="py-24 bg-gray-50 border-t border-gray-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Sprechen Sie uns an – wir helfen Ihnen weiter.</h2>
           </div>
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <Card className="border-2 border-gray-300">
+              <Card className="border border-gray-300 bg-white shadow-none">
                 <CardHeader>
                   <CardTitle className="flex items-center text-gray-900">
                     <Phone className="h-5 w-5 mr-2" />
@@ -216,12 +241,12 @@ const Index = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-lg text-gray-700">0621 – 733628</p>
+                  <p className="text-lg text-gray-700 font-medium">0621 – 733628</p>
                   <p className="text-lg text-gray-700">Mobil: 0173 – 8771474</p>
                 </CardContent>
               </Card>
 
-              <Card className="border-2 border-gray-300">
+              <Card className="border border-gray-300 bg-white shadow-none">
                 <CardHeader>
                   <CardTitle className="flex items-center text-gray-900">
                     <Mail className="h-5 w-5 mr-2" />
@@ -234,7 +259,7 @@ const Index = () => {
               </Card>
             </div>
             
-            <Card className="border-2 border-gray-300">
+            <Card className="border border-gray-300 bg-white shadow-none">
               <CardHeader>
                 <CardTitle className="flex items-center text-gray-900">
                   <MapPin className="h-5 w-5 mr-2" />
@@ -254,7 +279,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-200 border-t border-gray-300 py-8 mt-auto">
+      <footer className="bg-gray-100 border-t border-gray-300 py-8 mt-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-lg font-bold text-gray-900 mb-2">AB GM</p>
