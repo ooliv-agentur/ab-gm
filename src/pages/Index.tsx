@@ -1,40 +1,59 @@
 
-import { Phone, Mail, MapPin, Shield, CheckCircle, Award, Users, ArrowRight, ChevronDown } from "lucide-react";
+import { useState } from "react";
+import { Phone, Mail, MapPin, Shield, CheckCircle, Award, Users, ArrowRight, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Index = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Navigation */}
-      <nav className="bg-white border-b border-gray-200">
+      {/* Navigation - Burger Menu */}
+      <nav className="bg-white border-b border-gray-200 relative z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <span className="text-2xl font-bold text-gray-900">AB GM</span>
             </div>
-            <div className="hidden md:flex space-x-6">
-              <span className="text-gray-900 font-medium">Startseite</span>
-              <span className="text-gray-400 font-light cursor-default">News</span>
-              <span className="text-gray-400 font-light cursor-default">Portrait</span>
-              <span className="text-gray-400 font-light cursor-default">Kompetenzen</span>
-              <span className="text-gray-400 font-light cursor-default">Referenzen</span>
-              <span className="text-gray-900 hover:text-gray-700 cursor-pointer">Kontakt</span>
-              <div className="relative">
-                <span className="text-gray-400 font-light cursor-default flex items-center">
-                  Leistungen <ChevronDown className="ml-1 h-4 w-4" />
-                </span>
-                <div className="absolute top-full left-0 mt-1 w-64 bg-white border border-gray-200 rounded-md opacity-0 invisible">
-                  <div className="py-2">
-                    <span className="block px-4 py-2 text-gray-400 font-light cursor-default">Lufthygiene RLT-Anlagen</span>
-                    <span className="block px-4 py-2 text-gray-400 font-light cursor-default">Trinkwasserhygiene</span>
-                    <span className="block px-4 py-2 text-gray-400 font-light cursor-default">Kühlwasserhygiene</span>
+            <button onClick={toggleMenu} className="p-2">
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Full-screen Menu Overlay */}
+        {isMenuOpen && (
+          <div className="fixed inset-0 bg-white z-40 pt-16">
+            <div className="max-w-2xl mx-auto px-8 py-12">
+              <div className="space-y-8">
+                <div className="space-y-4">
+                  <span className="block text-2xl font-medium text-gray-900 cursor-pointer">Startseite</span>
+                  <span className="block text-lg text-gray-400 font-light cursor-default">News</span>
+                  <span className="block text-lg text-gray-400 font-light cursor-default">Portrait</span>
+                  <span className="block text-lg text-gray-400 font-light cursor-default">Kompetenzen</span>
+                  <span className="block text-lg text-gray-400 font-light cursor-default">Referenzen</span>
+                  <span className="block text-lg text-gray-400 font-light cursor-default">Jobs</span>
+                  <span className="block text-2xl font-medium text-gray-900 cursor-pointer">Kontakt</span>
+                </div>
+                
+                <div className="border-t pt-6">
+                  <span className="block text-xl font-medium text-gray-600 mb-4">Leistungen</span>
+                  <div className="ml-4 space-y-2">
+                    <span className="block text-lg text-gray-400 font-light cursor-default">Lufthygiene RLT-Anlagen</span>
+                    <span className="block text-lg text-gray-400 font-light cursor-default">Trinkwasserhygiene</span>
+                    <span className="block text-lg text-gray-400 font-light cursor-default">Kühlwasserhygiene</span>
+                    <span className="block text-lg text-gray-400 font-light cursor-default">Gefahrstoffmessung & Raumluftanalytik</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
       </nav>
 
       {/* Hero Section - Full Height */}
@@ -55,7 +74,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Intro Section */}
+      {/* Problem/Solution Intro */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
@@ -116,13 +135,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Service Overview */}
+      {/* Service Overview - 4 Clusters */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Unsere Leistungsbereiche</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-gray-50 p-8 border border-gray-300">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Lufthygiene (RLT-Anlagen)</h3>
               <ul className="space-y-3">
@@ -176,11 +195,29 @@ const Index = () => {
                 </li>
               </ul>
             </div>
+
+            <div className="bg-gray-50 p-8 border border-gray-300">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Gefahrstoffmessung & Raumluftanalytik</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Schimmel- und Asbestuntersuchungen</span>
+                </li>
+                <li className="flex items-start">
+                  <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">VOC-, PCB-Messungen nach TRGS 519</span>
+                </li>
+                <li className="flex items-start">
+                  <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Raumluftqualität nach BGR 128</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Regulatory Compliance */}
+      {/* Legal Compliance */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
@@ -203,21 +240,90 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Trust & Qualification */}
+      {/* How We Work - Step-by-Step */}
       <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">So arbeiten wir</h2>
+            <p className="text-xl text-gray-600">Von der Beratung bis zum fertigen Prüfbericht</p>
+          </div>
+          <div className="grid md:grid-cols-5 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-gray-600">1</span>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Erstberatung</h3>
+              <p className="text-gray-600">Bedarfsanalyse und Terminplanung</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-gray-600">2</span>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Vor-Ort-Inspektion</h3>
+              <p className="text-gray-600">Anlagenprüfung und Fotodokumentation</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-gray-600">3</span>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Probenahme</h3>
+              <p className="text-gray-600">Fachgerechte Entnahme nach Norm</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-gray-600">4</span>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Laboranalyse</h3>
+              <p className="text-gray-600">Akkreditierte Untersuchung</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-gray-600">5</span>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Dokumentation</h3>
+              <p className="text-gray-600">Prüfbericht mit Handlungsempfehlungen</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust & Qualification */}
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Vertrauen & Qualifikation</h2>
               <p className="text-xl font-medium text-gray-900 mb-8">Erfahrung, die Verantwortung trägt.</p>
             </div>
-            <div className="bg-gray-50 p-8 border border-gray-300">
+            <div className="bg-white p-8 border border-gray-300 mb-8">
               <div className="flex items-start">
                 <Users className="h-12 w-12 text-gray-500 mr-6 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-lg leading-relaxed text-gray-700">
+                  <p className="text-lg leading-relaxed text-gray-700 mb-6">
                     AB GM wird geleitet von <strong>Andreas Stefan Bartsch</strong>, Diplom-Ingenieur (FH) mit jahrzehntelanger Erfahrung in Hygieneanalytik und Betreiberberatung. Als akkreditierter Probenehmer und TÜV-zertifizierter Fachberater für Schimmelpilzschäden begleitet er Sie fachlich, rechtssicher und unabhängig.
                   </p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white p-8 border border-gray-300">
+              <h3 className="text-xl font-bold text-gray-900 mb-6">Zertifizierungen & Qualifikationen</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <ul className="space-y-2 text-gray-700">
+                    <li>• VDI 6022 (RLT-Anlagen)</li>
+                    <li>• VDI 6023 (Trinkwasser)</li>
+                    <li>• VDI 2047 (Rückkühlwerke)</li>
+                    <li>• TRGS 519 (Asbest)</li>
+                  </ul>
+                </div>
+                <div>
+                  <ul className="space-y-2 text-gray-700">
+                    <li>• BGR 128 (Gefahrstoffe)</li>
+                    <li>• Akkreditierter Wasser- & Luftprobenehmer</li>
+                    <li>• TÜV-zertifizierter Schimmelpilz-Sachverständiger</li>
+                    <li>• Fachberater für Schimmelpilzschäden</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -226,14 +332,15 @@ const Index = () => {
       </section>
 
       {/* Contact CTA */}
-      <section id="contact" className="py-24 bg-gray-50 border-t border-gray-300">
+      <section id="contact" className="py-24 bg-white border-t border-gray-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Sprechen Sie uns an – wir helfen Ihnen weiter.</h2>
+            <p className="text-lg text-gray-600">Aktiv im Raum Mannheim – Heidelberg – Rhein-Neckar</p>
           </div>
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <Card className="border border-gray-300 bg-white shadow-none">
+              <Card className="border border-gray-300 bg-gray-50 shadow-none">
                 <CardHeader>
                   <CardTitle className="flex items-center text-gray-900">
                     <Phone className="h-5 w-5 mr-2" />
@@ -246,7 +353,7 @@ const Index = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border border-gray-300 bg-white shadow-none">
+              <Card className="border border-gray-300 bg-gray-50 shadow-none">
                 <CardHeader>
                   <CardTitle className="flex items-center text-gray-900">
                     <Mail className="h-5 w-5 mr-2" />
@@ -259,7 +366,7 @@ const Index = () => {
               </Card>
             </div>
             
-            <Card className="border border-gray-300 bg-white shadow-none">
+            <Card className="border border-gray-300 bg-gray-50 shadow-none">
               <CardHeader>
                 <CardTitle className="flex items-center text-gray-900">
                   <MapPin className="h-5 w-5 mr-2" />
@@ -278,14 +385,20 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-100 border-t border-gray-300 py-8 mt-auto">
+      {/* Footer - Always bottom fixed */}
+      <footer className="bg-gray-100 border-t border-gray-300 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <p className="text-lg font-bold text-gray-900 mb-2">AB GM</p>
-            <p className="text-sm text-gray-600">
-              Ingenieurbüro für Lufthygiene und Wasserhygiene
-            </p>
+          <div className="flex justify-between items-center">
+            <div>
+              <p className="text-lg font-bold text-gray-900 mb-1">AB GM</p>
+              <p className="text-sm text-gray-600">
+                Ingenieurbüro für Lufthygiene und Wasserhygiene
+              </p>
+            </div>
+            <div className="flex space-x-6">
+              <span className="text-sm text-gray-400 cursor-default">Impressum</span>
+              <span className="text-sm text-gray-400 cursor-default">Datenschutz</span>
+            </div>
           </div>
         </div>
       </footer>
