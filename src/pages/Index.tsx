@@ -1,5 +1,3 @@
-
-
 import { useState } from "react";
 import { Phone, Mail, MapPin, Shield, CheckCircle, Award, Users, ArrowRight, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -21,43 +19,56 @@ const Index = () => {
             <div className="flex items-center">
               <span className="text-2xl font-bold text-gray-900">AB GM</span>
             </div>
-            <button onClick={toggleMenu} className="p-2 transition-transform duration-300 ease-in-out">
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <button 
+              onClick={toggleMenu} 
+              className="p-2 transition-all duration-300 ease-in-out relative z-50"
+              aria-label={isMenuOpen ? "Menü schließen" : "Menü öffnen"}
+            >
+              {isMenuOpen ? (
+                <X className="h-8 w-8 text-gray-900" />
+              ) : (
+                <Menu className="h-8 w-8 text-gray-900" />
+              )}
             </button>
           </div>
         </div>
 
-        {/* Full-screen Menu Overlay with Enhanced Transition */}
-        <div className={`fixed inset-0 bg-white z-40 pt-16 transition-all duration-400 ease-in-out ${
+        {/* Full-screen Menu Overlay */}
+        <div className={`fixed inset-0 bg-white z-40 transition-all duration-500 ease-in-out ${
           isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}>
-          <div className="max-w-3xl mx-auto px-8 py-16">
-            <div className="space-y-12">
-              <div className="space-y-6">
-                <span className="block text-3xl font-medium text-gray-900 cursor-default">Startseite</span>
-                <span className="block text-xl text-gray-400 font-light cursor-default">News</span>
-                <span className="block text-xl text-gray-400 font-light cursor-default">Portrait</span>
-                <span className="block text-xl text-gray-400 font-light cursor-default">Kompetenzen</span>
-                <span className="block text-xl text-gray-400 font-light cursor-default">Referenzen</span>
-                <span className="block text-xl text-gray-400 font-light cursor-default">Jobs</span>
-                <span className="block text-3xl font-medium text-gray-900 cursor-default">Kontakt</span>
-              </div>
-              
-              <div className="border-t border-gray-200 pt-8">
-                <span className="block text-2xl font-medium text-gray-600 mb-6 cursor-default">Leistungen</span>
-                <div className="ml-6 space-y-3">
-                  <span className="block text-xl text-gray-400 font-light cursor-default">Lufthygiene RLT-Anlagen</span>
-                  <span className="block text-xl text-gray-400 font-light cursor-default">Trinkwasserhygiene</span>
-                  <span className="block text-xl text-gray-400 font-light cursor-default">Kühlwasserhygiene</span>
-                  <span className="block text-xl text-gray-400 font-light cursor-default">Gefahrstoffmessung & Raumluftanalytik</span>
-                </div>
-              </div>
+          <div className="h-full overflow-y-auto">
+            {/* Add padding top to account for header */}
+            <div className="pt-20 pb-8 px-6 sm:px-8 lg:px-12 min-h-full flex flex-col">
+              <div className="max-w-4xl mx-auto w-full flex-1">
+                <div className="space-y-8 sm:space-y-12">
+                  <div className="space-y-6 sm:space-y-8">
+                    <span className="block text-4xl sm:text-5xl lg:text-6xl font-medium text-gray-900 cursor-default">Startseite</span>
+                    <span className="block text-2xl sm:text-3xl lg:text-4xl text-gray-400 font-light cursor-default">News</span>
+                    <span className="block text-2xl sm:text-3xl lg:text-4xl text-gray-400 font-light cursor-default">Portrait</span>
+                    <span className="block text-2xl sm:text-3xl lg:text-4xl text-gray-400 font-light cursor-default">Kompetenzen</span>
+                    <span className="block text-2xl sm:text-3xl lg:text-4xl text-gray-400 font-light cursor-default">Referenzen</span>
+                    <span className="block text-2xl sm:text-3xl lg:text-4xl text-gray-400 font-light cursor-default">Jobs</span>
+                    <span className="block text-4xl sm:text-5xl lg:text-6xl font-medium text-gray-900 cursor-default">Kontakt</span>
+                  </div>
+                  
+                  <div className="border-t border-gray-200 pt-8">
+                    <span className="block text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-600 mb-8 cursor-default">Leistungen</span>
+                    <div className="ml-6 sm:ml-8 space-y-4 sm:space-y-6">
+                      <span className="block text-xl sm:text-2xl lg:text-3xl text-gray-400 font-light cursor-default">Lufthygiene RLT-Anlagen</span>
+                      <span className="block text-xl sm:text-2xl lg:text-3xl text-gray-400 font-light cursor-default">Trinkwasserhygiene</span>
+                      <span className="block text-xl sm:text-2xl lg:text-3xl text-gray-400 font-light cursor-default">Kühlwasserhygiene</span>
+                      <span className="block text-xl sm:text-2xl lg:text-3xl text-gray-400 font-light cursor-default">Gefahrstoffmessung & Raumluftanalytik</span>
+                    </div>
+                  </div>
 
-              {/* Contact Details in Menu */}
-              <div className="border-t border-gray-200 pt-8">
-                <div className="space-y-3">
-                  <p className="text-lg font-medium text-gray-700">0621 – 733628</p>
-                  <p className="text-lg font-medium text-gray-700">info@ab-gm.de</p>
+                  {/* Contact Details in Menu */}
+                  <div className="border-t border-gray-200 pt-8 mt-auto">
+                    <div className="space-y-4">
+                      <p className="text-xl sm:text-2xl lg:text-3xl font-medium text-gray-700">0621 – 733628</p>
+                      <p className="text-xl sm:text-2xl lg:text-3xl font-medium text-gray-700">info@ab-gm.de</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -68,13 +79,13 @@ const Index = () => {
       {/* Hero Section - Full Height */}
       <section className="h-screen flex items-center justify-center bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-6xl font-bold text-gray-900 mb-8">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-8">
             Klarheit, Verantwortung, Hygiene.
           </h1>
-          <p className="text-2xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
             AB GM – Ihr zertifizierter Partner für Hygieneinspektionen, Gefährdungsanalysen und Laboruntersuchungen nach VDI 6022, VDI 6023, VDI 2047 und TrinkwV.
           </p>
-          <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto font-medium">
+          <p className="text-lg sm:text-xl text-gray-600 mb-12 max-w-3xl mx-auto font-medium">
             Wir sichern Ihre Anlagenhygiene – unabhängig, nachvollziehbar und rechtssicher.
           </p>
           <Button className="bg-gray-800 text-white px-8 py-4 text-lg hover:bg-gray-700">
@@ -86,14 +97,14 @@ const Index = () => {
       <div className="border-t border-gray-200"></div>
 
       {/* Problem/Solution Intro */}
-      <section className="py-32 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-32 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+            <p className="text-lg sm:text-xl text-gray-700 mb-8 leading-relaxed">
               Viele Betreiber wissen: Hygieneprüfungen sind Pflicht – aber die Umsetzung ist komplex.
               Als unabhängiges Ingenieurbüro helfen wir Ihnen dabei, gesetzliche Vorgaben zuverlässig zu erfüllen und Risiken zu vermeiden. Wir prüfen Ihre Anlagen, analysieren relevante Hygienedaten und liefern klare Ergebnisse mit konkreten Empfehlungen – für Ihre Sicherheit und die Ihrer Nutzer.
             </p>
-            <p className="text-xl font-medium text-gray-900">
+            <p className="text-lg sm:text-xl font-medium text-gray-900">
               RLT-Anlage, Trinkwasser, Rückkühlwerk – wir prüfen, analysieren, dokumentieren.
             </p>
           </div>
@@ -103,13 +114,13 @@ const Index = () => {
       <div className="border-t border-gray-200"></div>
 
       {/* Benefits Section */}
-      <section className="py-32 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Ihre Vorteile mit AB GM</h2>
+      <section className="py-20 sm:py-32 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 sm:mb-20">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Ihre Vorteile mit AB GM</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center border border-gray-300 bg-white shadow-none">
+            <Card className="text-center border border-gray-300 bg-white shadow-none hover:bg-gray-50 transition-colors">
               <CardHeader>
                 <Shield className="h-12 w-12 mx-auto text-gray-500 mb-4" />
                 <CardTitle className="text-xl text-gray-900">Rechtssicherheit & Nachvollziehbarkeit</CardTitle>
@@ -121,7 +132,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="text-center border border-gray-300 bg-white shadow-none">
+            <Card className="text-center border border-gray-300 bg-white shadow-none hover:bg-gray-50 transition-colors">
               <CardHeader>
                 <Award className="h-12 w-12 mx-auto text-gray-500 mb-4" />
                 <CardTitle className="text-xl text-gray-900">Anerkannte Fachkompetenz</CardTitle>
@@ -133,7 +144,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="text-center border border-gray-300 bg-white shadow-none">
+            <Card className="text-center border border-gray-300 bg-white shadow-none hover:bg-gray-50 transition-colors">
               <CardHeader>
                 <CheckCircle className="h-12 w-12 mx-auto text-gray-500 mb-4" />
                 <CardTitle className="text-xl text-gray-900">Effizient & lösungsorientiert</CardTitle>
@@ -151,15 +162,15 @@ const Index = () => {
       <div className="border-t border-gray-200"></div>
 
       {/* Service Overview - 4 Clusters */}
-      <section className="py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Unsere Leistungsbereiche</h2>
+      <section className="py-20 sm:py-32 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 sm:mb-20">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Unsere Leistungsbereiche</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-gray-50 p-8 border border-gray-300 hover:bg-gray-100 transition-colors cursor-default">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Lufthygiene (RLT-Anlagen)</h3>
-              <ul className="space-y-3 mb-4">
+              <ul className="space-y-3 mb-6">
                 <li className="flex items-start">
                   <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Hygieneinspektionen nach VDI 6022</span>
@@ -178,7 +189,7 @@ const Index = () => {
 
             <div className="bg-gray-50 p-8 border border-gray-300 hover:bg-gray-100 transition-colors cursor-default">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Trinkwasserhygiene</h3>
-              <ul className="space-y-3 mb-4">
+              <ul className="space-y-3 mb-6">
                 <li className="flex items-start">
                   <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Legionellenprüfung gemäß Trinkwasserverordnung</span>
@@ -197,7 +208,7 @@ const Index = () => {
 
             <div className="bg-gray-50 p-8 border border-gray-300 hover:bg-gray-100 transition-colors cursor-default">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Kühlwasserhygiene (Rückkühlwerke)</h3>
-              <ul className="space-y-3 mb-4">
+              <ul className="space-y-3 mb-6">
                 <li className="flex items-start">
                   <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Hygieneprüfungen gemäß 42. BImSchV</span>
@@ -216,7 +227,7 @@ const Index = () => {
 
             <div className="bg-gray-50 p-8 border border-gray-300 hover:bg-gray-100 transition-colors cursor-default">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Gefahrstoffmessung & Raumluftanalytik</h3>
-              <ul className="space-y-3 mb-4">
+              <ul className="space-y-3 mb-6">
                 <li className="flex items-start">
                   <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Schimmel- und Asbestuntersuchungen</span>
@@ -239,10 +250,10 @@ const Index = () => {
       <div className="border-t border-gray-200"></div>
 
       {/* Legal Compliance */}
-      <section className="py-32 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-32 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">Recht & Betreiberpflichten</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">Recht & Betreiberpflichten</h2>
             <p className="text-xl font-medium text-gray-900 mb-6">
               Gesetzliche Pflicht – technisches Risiko – persönliche Verantwortung.
             </p>
@@ -264,10 +275,10 @@ const Index = () => {
       <div className="border-t border-gray-200"></div>
 
       {/* How We Work - Step-by-Step */}
-      <section className="py-32 bg-white">
+      <section className="py-20 sm:py-32 bg-white">
         <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">So arbeiten wir</h2>
+          <div className="text-center mb-16 sm:mb-20">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">So arbeiten wir</h2>
             <p className="text-xl text-gray-600">Von der Beratung bis zum fertigen Prüfbericht</p>
           </div>
           <div className="grid md:grid-cols-5 gap-8 max-w-6xl mx-auto">
@@ -313,11 +324,11 @@ const Index = () => {
       <div className="border-t border-gray-200"></div>
 
       {/* Trust & Qualification */}
-      <section className="py-32 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-32 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Vertrauen & Qualifikation</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Vertrauen & Qualifikation</h2>
               <p className="text-xl font-medium text-gray-900 mb-8">Erfahrung, die Verantwortung trägt.</p>
             </div>
             <div className="bg-white p-8 border border-gray-300 mb-8">
@@ -359,10 +370,10 @@ const Index = () => {
       <div className="border-t border-gray-200"></div>
 
       {/* Contact CTA */}
-      <section id="contact" className="py-32 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="contact" className="py-20 sm:py-32 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Sprechen Sie uns an – wir helfen Ihnen weiter.</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Sprechen Sie uns an – wir helfen Ihnen weiter.</h2>
             <p className="text-lg text-gray-600">Aktiv im Raum Mannheim – Heidelberg – Rhein-Neckar</p>
           </div>
           <div className="max-w-4xl mx-auto">
@@ -434,4 +445,3 @@ const Index = () => {
 };
 
 export default Index;
-
