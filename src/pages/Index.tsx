@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Phone, Mail, MapPin, Shield, CheckCircle, Award, Users, ArrowRight, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -11,13 +12,13 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       {/* Navigation - Burger Menu */}
-      <nav className="bg-white border-b border-gray-200 relative z-50">
+      <nav className="bg-white border-b border-blue-100 relative z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <span className="text-2xl font-bold text-gray-900">AB GM</span>
+              <span className="text-2xl font-bold text-blue-900">AB GM</span>
             </div>
             <button 
               onClick={toggleMenu} 
@@ -25,9 +26,9 @@ const Index = () => {
               aria-label={isMenuOpen ? "Menü schließen" : "Menü öffnen"}
             >
               {isMenuOpen ? (
-                <X className="h-8 w-8 text-gray-900" />
+                <X className="h-8 w-8 text-blue-900" />
               ) : (
-                <Menu className="h-8 w-8 text-gray-900" />
+                <Menu className="h-8 w-8 text-blue-900" />
               )}
             </button>
           </div>
@@ -38,35 +39,22 @@ const Index = () => {
           isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}>
           <div className="h-full overflow-y-auto">
-            {/* Add padding top to account for header */}
             <div className="pt-20 pb-8 px-6 sm:px-8 lg:px-12 min-h-full flex flex-col">
               <div className="max-w-4xl mx-auto w-full flex-1">
-                <div className="space-y-8 sm:space-y-12">
-                  <div className="space-y-6 sm:space-y-8">
-                    <span className="block text-4xl sm:text-5xl lg:text-6xl font-medium text-gray-900 cursor-default">Startseite</span>
-                    <span className="block text-2xl sm:text-3xl lg:text-4xl text-gray-400 font-light cursor-default">News</span>
-                    <span className="block text-2xl sm:text-3xl lg:text-4xl text-gray-400 font-light cursor-default">Portrait</span>
-                    <span className="block text-2xl sm:text-3xl lg:text-4xl text-gray-400 font-light cursor-default">Kompetenzen</span>
-                    <span className="block text-2xl sm:text-3xl lg:text-4xl text-gray-400 font-light cursor-default">Referenzen</span>
-                    <span className="block text-2xl sm:text-3xl lg:text-4xl text-gray-400 font-light cursor-default">Jobs</span>
-                    <span className="block text-4xl sm:text-5xl lg:text-6xl font-medium text-gray-900 cursor-default">Kontakt</span>
-                  </div>
-                  
-                  <div className="border-t border-gray-200 pt-8">
-                    <span className="block text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-600 mb-8 cursor-default">Leistungen</span>
-                    <div className="ml-6 sm:ml-8 space-y-4 sm:space-y-6">
-                      <span className="block text-xl sm:text-2xl lg:text-3xl text-gray-400 font-light cursor-default">Lufthygiene RLT-Anlagen</span>
-                      <span className="block text-xl sm:text-2xl lg:text-3xl text-gray-400 font-light cursor-default">Trinkwasserhygiene</span>
-                      <span className="block text-xl sm:text-2xl lg:text-3xl text-gray-400 font-light cursor-default">Kühlwasserhygiene</span>
-                      <span className="block text-xl sm:text-2xl lg:text-3xl text-gray-400 font-light cursor-default">Gefahrstoffmessung & Raumluftanalytik</span>
-                    </div>
+                <div className="space-y-12 sm:space-y-16">
+                  <div className="space-y-8 sm:space-y-10">
+                    <span className="block text-5xl sm:text-6xl lg:text-7xl font-medium text-blue-900 cursor-default hover:text-blue-700 transition-colors">Startseite</span>
+                    <span className="block text-3xl sm:text-4xl lg:text-5xl text-blue-400 font-light cursor-default hover:text-blue-600 transition-colors">Portrait</span>
+                    <span className="block text-3xl sm:text-4xl lg:text-5xl text-blue-400 font-light cursor-default hover:text-blue-600 transition-colors">Leistungen</span>
+                    <span className="block text-3xl sm:text-4xl lg:text-5xl text-blue-400 font-light cursor-default hover:text-blue-600 transition-colors">Referenzen</span>
+                    <span className="block text-5xl sm:text-6xl lg:text-7xl font-medium text-blue-900 cursor-default hover:text-blue-700 transition-colors">Kontakt</span>
                   </div>
 
                   {/* Contact Details in Menu */}
-                  <div className="border-t border-gray-200 pt-8 mt-auto">
-                    <div className="space-y-4">
-                      <p className="text-xl sm:text-2xl lg:text-3xl font-medium text-gray-700">0621 – 733628</p>
-                      <p className="text-xl sm:text-2xl lg:text-3xl font-medium text-gray-700">info@ab-gm.de</p>
+                  <div className="border-t border-blue-200 pt-12 mt-auto">
+                    <div className="space-y-6">
+                      <p className="text-2xl sm:text-3xl lg:text-4xl font-medium text-blue-700">0621 – 733628</p>
+                      <p className="text-2xl sm:text-3xl lg:text-4xl font-medium text-blue-700">info@ab-gm.de</p>
                     </div>
                   </div>
                 </div>
@@ -77,80 +65,81 @@ const Index = () => {
       </nav>
 
       {/* Hero Section - Full Height */}
-      <section className="h-screen flex items-center justify-center bg-gray-50">
+      <section className="h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-8">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-blue-900 mb-8 leading-tight">
             Klarheit, Verantwortung, Hygiene.
           </h1>
-          <p className="text-xl sm:text-2xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl lg:text-3xl text-blue-700 mb-8 max-w-5xl mx-auto leading-relaxed font-medium">
             AB GM – Ihr zertifizierter Partner für Hygieneinspektionen, Gefährdungsanalysen und Laboruntersuchungen nach VDI 6022, VDI 6023, VDI 2047 und TrinkwV.
           </p>
-          <p className="text-lg sm:text-xl text-gray-600 mb-12 max-w-3xl mx-auto font-medium">
+          <p className="text-lg sm:text-xl lg:text-2xl text-blue-600 mb-12 max-w-4xl mx-auto font-light">
             Wir sichern Ihre Anlagenhygiene – unabhängig, nachvollziehbar und rechtssicher.
           </p>
-          <Button className="bg-gray-800 text-white px-8 py-4 text-lg hover:bg-gray-700">
+          <Button className="bg-blue-800 text-white px-10 py-6 text-xl hover:bg-blue-700 rounded-lg shadow-lg">
             Jetzt beraten lassen
           </Button>
         </div>
       </section>
 
-      <div className="border-t border-gray-200"></div>
-
-      {/* Problem/Solution Intro */}
-      <section className="py-20 sm:py-32 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-lg sm:text-xl text-gray-700 mb-8 leading-relaxed">
+      {/* Intro Text - Problem/Solution */}
+      <section className="py-24 sm:py-32 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-xl sm:text-2xl text-gray-700 mb-8 leading-relaxed">
               Viele Betreiber wissen: Hygieneprüfungen sind Pflicht – aber die Umsetzung ist komplex.
-              Als unabhängiges Ingenieurbüro helfen wir Ihnen dabei, gesetzliche Vorgaben zuverlässig zu erfüllen und Risiken zu vermeiden. Wir prüfen Ihre Anlagen, analysieren relevante Hygienedaten und liefern klare Ergebnisse mit konkreten Empfehlungen – für Ihre Sicherheit und die Ihrer Nutzer.
+              Als unabhängiges Ingenieurbüro helfen wir Ihnen dabei, gesetzliche Vorgaben zuverlässig zu erfüllen und Risiken zu vermeiden.
             </p>
-            <p className="text-lg sm:text-xl font-medium text-gray-900">
+            <p className="text-xl sm:text-2xl text-gray-700 mb-8 leading-relaxed">
+              Wir prüfen Ihre Anlagen, analysieren relevante Hygienedaten und liefern klare Ergebnisse mit konkreten Empfehlungen – für Ihre Sicherheit und die Ihrer Nutzer.
+            </p>
+            <p className="text-xl sm:text-2xl font-semibold text-blue-900">
               RLT-Anlage, Trinkwasser, Rückkühlwerk – wir prüfen, analysieren, dokumentieren.
             </p>
           </div>
         </div>
       </section>
 
-      <div className="border-t border-gray-200"></div>
+      <div className="border-t border-blue-100"></div>
 
-      {/* Benefits Section */}
-      <section className="py-20 sm:py-32 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 sm:mb-20">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Ihre Vorteile mit AB GM</h2>
+      {/* Benefits Section - Ihre Vorteile */}
+      <section className="py-24 sm:py-32 bg-blue-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl sm:text-5xl font-bold text-blue-900 mb-4">Ihre Vorteile mit AB GM</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center border border-gray-300 bg-white shadow-none hover:bg-gray-50 transition-colors">
-              <CardHeader>
-                <Shield className="h-12 w-12 mx-auto text-gray-500 mb-4" />
-                <CardTitle className="text-xl text-gray-900">Rechtssicherheit & Nachvollziehbarkeit</CardTitle>
+          <div className="grid md:grid-cols-3 gap-10">
+            <Card className="text-center border-2 border-blue-200 bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:border-blue-300">
+              <CardHeader className="pb-6">
+                <Shield className="h-16 w-16 mx-auto text-blue-600 mb-6" />
+                <CardTitle className="text-2xl text-blue-900 leading-tight">Rechtssicherheit & Nachvollziehbarkeit</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base text-gray-700">
+                <CardDescription className="text-lg text-gray-700 leading-relaxed">
                   Hygieneprüfungen nach VDI 6022, 6023, 2047 & TrinkwV – mit klarer Dokumentation für Behörden & Betreiberpflicht.
                 </CardDescription>
               </CardContent>
             </Card>
 
-            <Card className="text-center border border-gray-300 bg-white shadow-none hover:bg-gray-50 transition-colors">
-              <CardHeader>
-                <Award className="h-12 w-12 mx-auto text-gray-500 mb-4" />
-                <CardTitle className="text-xl text-gray-900">Anerkannte Fachkompetenz</CardTitle>
+            <Card className="text-center border-2 border-blue-200 bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:border-blue-300">
+              <CardHeader className="pb-6">
+                <Award className="h-16 w-16 mx-auto text-blue-600 mb-6" />
+                <CardTitle className="text-2xl text-blue-900 leading-tight">Anerkannte Fachkompetenz</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base text-gray-700">
+                <CardDescription className="text-lg text-gray-700 leading-relaxed">
                   Zertifizierter Probenehmer, TÜV-geprüfter Fachberater für Schimmelpilz – praxisnahe Beratung auf höchstem Niveau.
                 </CardDescription>
               </CardContent>
             </Card>
 
-            <Card className="text-center border border-gray-300 bg-white shadow-none hover:bg-gray-50 transition-colors">
-              <CardHeader>
-                <CheckCircle className="h-12 w-12 mx-auto text-gray-500 mb-4" />
-                <CardTitle className="text-xl text-gray-900">Effizient & lösungsorientiert</CardTitle>
+            <Card className="text-center border-2 border-blue-200 bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:border-blue-300">
+              <CardHeader className="pb-6">
+                <CheckCircle className="h-16 w-16 mx-auto text-blue-600 mb-6" />
+                <CardTitle className="text-2xl text-blue-900 leading-tight">Effizient & lösungsorientiert</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base text-gray-700">
+                <CardDescription className="text-lg text-gray-700 leading-relaxed">
                   Schnelle Ergebnisse mit Fotodokumentation, Laborwerten und konkreten Handlungsempfehlungen.
                 </CardDescription>
               </CardContent>
@@ -159,283 +148,283 @@ const Index = () => {
         </div>
       </section>
 
-      <div className="border-t border-gray-200"></div>
+      <div className="border-t border-blue-100"></div>
 
-      {/* Service Overview - 4 Clusters */}
-      <section className="py-20 sm:py-32 bg-white">
+      {/* Service Overview - Leistungsbereiche */}
+      <section className="py-24 sm:py-32 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 sm:mb-20">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Unsere Leistungsbereiche</h2>
+          <div className="text-center mb-20">
+            <h2 className="text-4xl sm:text-5xl font-bold text-blue-900 mb-4">Unsere Leistungsbereiche</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 p-8 border border-gray-300 hover:bg-gray-100 transition-colors cursor-default">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Lufthygiene (RLT-Anlagen)</h3>
-              <ul className="space-y-3 mb-6">
+            <div className="bg-blue-50 p-10 border-2 border-blue-200 hover:bg-blue-100 hover:border-blue-300 transition-all duration-300 cursor-default rounded-lg">
+              <h3 className="text-3xl font-bold text-blue-900 mb-8">Lufthygiene (RLT-Anlagen)</h3>
+              <ul className="space-y-4 mb-8">
                 <li className="flex items-start">
-                  <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Hygieneinspektionen nach VDI 6022</span>
+                  <ArrowRight className="h-6 w-6 text-blue-600 mr-4 mt-1 flex-shrink-0" />
+                  <span className="text-lg text-gray-700">Hygieneinspektionen nach VDI 6022</span>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Luftkeimmessungen & Raumluftanalysen</span>
+                  <ArrowRight className="h-6 w-6 text-blue-600 mr-4 mt-1 flex-shrink-0" />
+                  <span className="text-lg text-gray-700">Luftkeimmessungen & Raumluftanalysen</span>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Gefährdungsbeurteilungen & Gutachten</span>
+                  <ArrowRight className="h-6 w-6 text-blue-600 mr-4 mt-1 flex-shrink-0" />
+                  <span className="text-lg text-gray-700">Gefährdungsbeurteilungen & Gutachten</span>
                 </li>
               </ul>
-              <p className="text-sm text-gray-400 font-light">Demnächst mehr erfahren</p>
+              <p className="text-base text-blue-400 font-light">Demnächst mehr erfahren</p>
             </div>
 
-            <div className="bg-gray-50 p-8 border border-gray-300 hover:bg-gray-100 transition-colors cursor-default">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Trinkwasserhygiene</h3>
-              <ul className="space-y-3 mb-6">
+            <div className="bg-blue-50 p-10 border-2 border-blue-200 hover:bg-blue-100 hover:border-blue-300 transition-all duration-300 cursor-default rounded-lg">
+              <h3 className="text-3xl font-bold text-blue-900 mb-8">Trinkwasserhygiene</h3>
+              <ul className="space-y-4 mb-8">
                 <li className="flex items-start">
-                  <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Legionellenprüfung gemäß Trinkwasserverordnung</span>
+                  <ArrowRight className="h-6 w-6 text-blue-600 mr-4 mt-1 flex-shrink-0" />
+                  <span className="text-lg text-gray-700">Legionellenprüfung gemäß Trinkwasserverordnung</span>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Hygieneinspektion nach VDI 6023</span>
+                  <ArrowRight className="h-6 w-6 text-blue-600 mr-4 mt-1 flex-shrink-0" />
+                  <span className="text-lg text-gray-700">Hygieneinspektion nach VDI 6023</span>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Gefährdungsanalyse bei Grenzwertüberschreitung</span>
+                  <ArrowRight className="h-6 w-6 text-blue-600 mr-4 mt-1 flex-shrink-0" />
+                  <span className="text-lg text-gray-700">Gefährdungsanalyse bei Grenzwertüberschreitung</span>
                 </li>
               </ul>
-              <p className="text-sm text-gray-400 font-light">Demnächst mehr erfahren</p>
+              <p className="text-base text-blue-400 font-light">Demnächst mehr erfahren</p>
             </div>
 
-            <div className="bg-gray-50 p-8 border border-gray-300 hover:bg-gray-100 transition-colors cursor-default">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Kühlwasserhygiene (Rückkühlwerke)</h3>
-              <ul className="space-y-3 mb-6">
+            <div className="bg-blue-50 p-10 border-2 border-blue-200 hover:bg-blue-100 hover:border-blue-300 transition-all duration-300 cursor-default rounded-lg">
+              <h3 className="text-3xl font-bold text-blue-900 mb-8">Kühlwasserhygiene (Rückkühlwerke)</h3>
+              <ul className="space-y-4 mb-8">
                 <li className="flex items-start">
-                  <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Hygieneprüfungen gemäß 42. BImSchV</span>
+                  <ArrowRight className="h-6 w-6 text-blue-600 mr-4 mt-1 flex-shrink-0" />
+                  <span className="text-lg text-gray-700">Hygieneprüfungen gemäß 42. BImSchV</span>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Laboranalytik und Gefährdungsbeurteilung</span>
+                  <ArrowRight className="h-6 w-6 text-blue-600 mr-4 mt-1 flex-shrink-0" />
+                  <span className="text-lg text-gray-700">Laboranalytik und Gefährdungsbeurteilung</span>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">VDI 2047-konforme Dokumentation</span>
+                  <ArrowRight className="h-6 w-6 text-blue-600 mr-4 mt-1 flex-shrink-0" />
+                  <span className="text-lg text-gray-700">VDI 2047-konforme Dokumentation</span>
                 </li>
               </ul>
-              <p className="text-sm text-gray-400 font-light">Demnächst mehr erfahren</p>
+              <p className="text-base text-blue-400 font-light">Demnächst mehr erfahren</p>
             </div>
 
-            <div className="bg-gray-50 p-8 border border-gray-300 hover:bg-gray-100 transition-colors cursor-default">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Gefahrstoffmessung & Raumluftanalytik</h3>
-              <ul className="space-y-3 mb-6">
+            <div className="bg-blue-50 p-10 border-2 border-blue-200 hover:bg-blue-100 hover:border-blue-300 transition-all duration-300 cursor-default rounded-lg">
+              <h3 className="text-3xl font-bold text-blue-900 mb-8">Gefahrstoffmessung & Raumluftanalytik</h3>
+              <ul className="space-y-4 mb-8">
                 <li className="flex items-start">
-                  <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Schimmel- und Asbestuntersuchungen</span>
+                  <ArrowRight className="h-6 w-6 text-blue-600 mr-4 mt-1 flex-shrink-0" />
+                  <span className="text-lg text-gray-700">Schimmel- und Asbestuntersuchungen</span>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">VOC-, PCB-Messungen nach TRGS 519</span>
+                  <ArrowRight className="h-6 w-6 text-blue-600 mr-4 mt-1 flex-shrink-0" />
+                  <span className="text-lg text-gray-700">VOC-, PCB-Messungen nach TRGS 519</span>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Raumluftqualität nach BGR 128</span>
+                  <ArrowRight className="h-6 w-6 text-blue-600 mr-4 mt-1 flex-shrink-0" />
+                  <span className="text-lg text-gray-700">Raumluftqualität nach BGR 128</span>
                 </li>
               </ul>
-              <p className="text-sm text-gray-400 font-light">Demnächst mehr erfahren</p>
+              <p className="text-base text-blue-400 font-light">Demnächst mehr erfahren</p>
             </div>
           </div>
         </div>
       </section>
 
-      <div className="border-t border-gray-200"></div>
+      <div className="border-t border-blue-100"></div>
 
-      {/* Legal Compliance */}
-      <section className="py-20 sm:py-32 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">Recht & Betreiberpflichten</h2>
-            <p className="text-xl font-medium text-gray-900 mb-6">
+      {/* Legal Compliance - Pflichten & Recht */}
+      <section className="py-24 sm:py-32 bg-blue-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-4xl sm:text-5xl font-bold text-blue-900 mb-12">Pflichten & Recht</h2>
+            <p className="text-2xl font-semibold text-blue-900 mb-8">
               Gesetzliche Pflicht – technisches Risiko – persönliche Verantwortung.
             </p>
-            <p className="text-lg leading-relaxed text-gray-700 mb-8">
+            <p className="text-xl leading-relaxed text-gray-700 mb-10">
               Als Betreiber von raumluft- oder wassertechnischen Anlagen sind Sie gesetzlich verpflichtet, regelmäßige Hygieneprüfungen durchzuführen. Wir unterstützen Sie bei der Erfüllung aller Anforderungen gemäß:
             </p>
-            <ul className="text-lg text-gray-700 mb-8 space-y-2">
+            <ul className="text-xl text-gray-700 mb-10 space-y-3 max-w-3xl mx-auto">
               <li><strong>Trinkwasserverordnung (TrinkwV)</strong></li>
               <li><strong>VDI-Richtlinien 6022, 6023, 2047</strong></li>
               <li><strong>42. Bundesimmissionsschutzverordnung (BImSchV)</strong></li>
             </ul>
-            <p className="text-lg leading-relaxed text-gray-700">
+            <p className="text-xl leading-relaxed text-gray-700">
               Wir beraten neutral, handeln dokumentiert und helfen Ihnen, im Falle einer Kontrolle alle Nachweise parat zu haben.
             </p>
           </div>
         </div>
       </section>
 
-      <div className="border-t border-gray-200"></div>
+      <div className="border-t border-blue-100"></div>
 
-      {/* How We Work - Step-by-Step */}
-      <section className="py-20 sm:py-32 bg-white">
-        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 sm:mb-20">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">So arbeiten wir</h2>
-            <p className="text-xl text-gray-600">Von der Beratung bis zum fertigen Prüfbericht</p>
+      {/* How We Work - So arbeiten wir */}
+      <section className="py-24 sm:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl sm:text-5xl font-bold text-blue-900 mb-4">So arbeiten wir</h2>
+            <p className="text-2xl text-blue-600">Von der Beratung bis zum fertigen Prüfbericht</p>
           </div>
-          <div className="grid md:grid-cols-5 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-5 gap-10">
             <div className="text-center">
-              <div className="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-gray-600">1</span>
+              <div className="w-24 h-24 bg-blue-200 rounded-full flex items-center justify-center mx-auto mb-8">
+                <span className="text-3xl font-bold text-blue-900">1</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Erstberatung</h3>
-              <p className="text-gray-600">Bedarfsanalyse und Terminplanung</p>
-            </div>
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-gray-600">2</span>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Vor-Ort-Inspektion</h3>
-              <p className="text-gray-600">Anlagenprüfung und Fotodokumentation</p>
+              <h3 className="text-xl font-semibold text-blue-900 mb-4">Erstberatung</h3>
+              <p className="text-lg text-gray-600">Bedarfsanalyse und Terminplanung</p>
             </div>
             <div className="text-center">
-              <div className="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-gray-600">3</span>
+              <div className="w-24 h-24 bg-blue-200 rounded-full flex items-center justify-center mx-auto mb-8">
+                <span className="text-3xl font-bold text-blue-900">2</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Probenahme</h3>
-              <p className="text-gray-600">Fachgerechte Entnahme nach Norm</p>
+              <h3 className="text-xl font-semibold text-blue-900 mb-4">Vor-Ort-Inspektion</h3>
+              <p className="text-lg text-gray-600">Anlagenprüfung und Fotodokumentation</p>
             </div>
             <div className="text-center">
-              <div className="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-gray-600">4</span>
+              <div className="w-24 h-24 bg-blue-200 rounded-full flex items-center justify-center mx-auto mb-8">
+                <span className="text-3xl font-bold text-blue-900">3</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Laboranalyse</h3>
-              <p className="text-gray-600">Akkreditierte Untersuchung</p>
+              <h3 className="text-xl font-semibold text-blue-900 mb-4">Probenahme</h3>
+              <p className="text-lg text-gray-600">Fachgerechte Entnahme nach Norm</p>
             </div>
             <div className="text-center">
-              <div className="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-gray-600">5</span>
+              <div className="w-24 h-24 bg-blue-200 rounded-full flex items-center justify-center mx-auto mb-8">
+                <span className="text-3xl font-bold text-blue-900">4</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Dokumentation</h3>
-              <p className="text-gray-600">Prüfbericht mit Handlungsempfehlungen</p>
+              <h3 className="text-xl font-semibold text-blue-900 mb-4">Laboranalyse</h3>
+              <p className="text-lg text-gray-600">Akkreditierte Untersuchung</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="border-t border-gray-200"></div>
-
-      {/* Trust & Qualification */}
-      <section className="py-20 sm:py-32 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Vertrauen & Qualifikation</h2>
-              <p className="text-xl font-medium text-gray-900 mb-8">Erfahrung, die Verantwortung trägt.</p>
-            </div>
-            <div className="bg-white p-8 border border-gray-300 mb-8">
-              <div className="flex items-start">
-                <Users className="h-12 w-12 text-gray-500 mr-6 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-lg leading-relaxed text-gray-700 mb-6">
-                    AB GM wird geleitet von <strong>Andreas Stefan Bartsch</strong>, Diplom-Ingenieur (FH) mit jahrzehntelanger Erfahrung in Hygieneanalytik und Betreiberberatung. Als akkreditierter Probenehmer und TÜV-zertifizierter Fachberater für Schimmelpilzschäden begleitet er Sie fachlich, rechtssicher und unabhängig.
-                  </p>
-                </div>
+            <div className="text-center">
+              <div className="w-24 h-24 bg-blue-200 rounded-full flex items-center justify-center mx-auto mb-8">
+                <span className="text-3xl font-bold text-blue-900">5</span>
               </div>
-            </div>
-            
-            <div className="bg-white p-8 border border-gray-300">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">Zertifizierungen & Qualifikationen</h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <ul className="space-y-2 text-gray-700">
-                    <li>• VDI 6022 (RLT-Anlagen)</li>
-                    <li>• VDI 6023 (Trinkwasser)</li>
-                    <li>• VDI 2047 (Rückkühlwerke)</li>
-                    <li>• TRGS 519 (Asbest)</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="space-y-2 text-gray-700">
-                    <li>• BGR 128 (Gefahrstoffe)</li>
-                    <li>• Akkreditierter Wasser- & Luftprobenehmer</li>
-                    <li>• TÜV-zertifizierter Schimmelpilz-Sachverständiger</li>
-                    <li>• Fachberater für Schimmelpilzschäden</li>
-                  </ul>
-                </div>
-              </div>
+              <h3 className="text-xl font-semibold text-blue-900 mb-4">Dokumentation</h3>
+              <p className="text-lg text-gray-600">Prüfbericht mit Handlungsempfehlungen</p>
             </div>
           </div>
         </div>
       </section>
 
-      <div className="border-t border-gray-200"></div>
+      <div className="border-t border-blue-100"></div>
 
-      {/* Contact CTA */}
-      <section id="contact" className="py-20 sm:py-32 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Trust & Qualification - Vertrauen & Qualifikation */}
+      <section className="py-24 sm:py-32 bg-blue-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Sprechen Sie uns an – wir helfen Ihnen weiter.</h2>
-            <p className="text-lg text-gray-600">Aktiv im Raum Mannheim – Heidelberg – Rhein-Neckar</p>
+            <h2 className="text-4xl sm:text-5xl font-bold text-blue-900 mb-4">Vertrauen & Qualifikation</h2>
+            <p className="text-2xl font-semibold text-blue-900 mb-8">Erfahrung, die Verantwortung trägt.</p>
           </div>
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <Card className="border border-gray-300 bg-gray-50 shadow-none">
-                <CardHeader>
-                  <CardTitle className="flex items-center text-gray-900 text-lg">
-                    <Phone className="h-5 w-5 mr-2" />
-                    Telefon
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-lg text-gray-700 font-medium">0621 – 733628</p>
-                  <p className="text-lg text-gray-700">Mobil: 0173 – 8771474</p>
-                </CardContent>
-              </Card>
-
-              <Card className="border border-gray-300 bg-gray-50 shadow-none">
-                <CardHeader>
-                  <CardTitle className="flex items-center text-gray-900 text-lg">
-                    <Mail className="h-5 w-5 mr-2" />
-                    E-Mail
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-lg text-gray-700">info@ab-gm.de</p>
-                </CardContent>
-              </Card>
+          <div className="bg-white p-12 border-2 border-blue-200 mb-10 rounded-lg shadow-lg">
+            <div className="flex items-start">
+              <Users className="h-16 w-16 text-blue-600 mr-8 mt-2 flex-shrink-0" />
+              <div>
+                <p className="text-xl leading-relaxed text-gray-700 mb-8">
+                  AB GM wird geleitet von <strong>Andreas Stefan Bartsch</strong>, Diplom-Ingenieur (FH) mit jahrzehntelanger Erfahrung in Hygieneanalytik und Betreiberberatung. Als akkreditierter Probenehmer und TÜV-zertifizierter Fachberater für Schimmelpilzschäden begleitet er Sie fachlich, rechtssicher und unabhängig.
+                </p>
+              </div>
             </div>
-            
-            <Card className="border border-gray-300 bg-gray-50 shadow-none">
+          </div>
+          
+          <div className="bg-white p-12 border-2 border-blue-200 rounded-lg shadow-lg">
+            <h3 className="text-2xl font-bold text-blue-900 mb-8">Zertifizierungen & Qualifikationen</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <ul className="space-y-3 text-lg text-gray-700">
+                  <li>• VDI 6022 (RLT-Anlagen)</li>
+                  <li>• VDI 6023 (Trinkwasser)</li>
+                  <li>• VDI 2047 (Rückkühlwerke)</li>
+                  <li>• TRGS 519 (Asbest)</li>
+                </ul>
+              </div>
+              <div>
+                <ul className="space-y-3 text-lg text-gray-700">
+                  <li>• BGR 128 (Gefahrstoffe)</li>
+                  <li>• Akkreditierter Wasser- & Luftprobenehmer</li>
+                  <li>• TÜV-zertifizierter Schimmelpilz-Sachverständiger</li>
+                  <li>• Fachberater für Schimmelpilzschäden</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="border-t border-blue-100"></div>
+
+      {/* Contact CTA - Kontaktbereich */}
+      <section id="contact" className="py-24 sm:py-32 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl sm:text-5xl font-bold text-blue-900 mb-4">Sprechen Sie uns an – wir helfen Ihnen weiter.</h2>
+            <p className="text-xl text-blue-600">Aktiv im Raum Mannheim – Heidelberg – Rhein-Neckar</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-10 mb-10">
+            <Card className="border-2 border-blue-200 bg-blue-50 shadow-lg hover:shadow-xl transition-shadow">
               <CardHeader>
-                <CardTitle className="flex items-center text-gray-900 text-lg">
-                  <MapPin className="h-5 w-5 mr-2" />
-                  Anschrift
+                <CardTitle className="flex items-center text-blue-900 text-xl">
+                  <Phone className="h-6 w-6 mr-3" />
+                  Telefon
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-lg text-gray-700">
-                  Andreas Stefan Bartsch<br />
-                  Reiherstraße 1<br />
-                  68309 Mannheim
-                </p>
+                <p className="text-xl text-blue-800 font-semibold">0621 – 733628</p>
+                <p className="text-xl text-blue-800">Mobil: 0173 – 8771474</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-blue-200 bg-blue-50 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <CardTitle className="flex items-center text-blue-900 text-xl">
+                  <Mail className="h-6 w-6 mr-3" />
+                  E-Mail
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-xl text-blue-800">info@ab-gm.de</p>
               </CardContent>
             </Card>
           </div>
+          
+          <Card className="border-2 border-blue-200 bg-blue-50 shadow-lg hover:shadow-xl transition-shadow">
+            <CardHeader>
+              <CardTitle className="flex items-center text-blue-900 text-xl">
+                <MapPin className="h-6 w-6 mr-3" />
+                Anschrift
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-xl text-blue-800">
+                Andreas Stefan Bartsch<br />
+                Reiherstraße 1<br />
+                68309 Mannheim
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
-      {/* Footer - Always bottom fixed */}
-      <footer className="bg-gray-100 border-t border-gray-300 py-10">
+      {/* Footer */}
+      <footer className="bg-blue-100 border-t border-blue-200 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             <div>
-              <p className="text-xl font-bold text-gray-900 mb-1">AB GM</p>
-              <p className="text-base text-gray-600">
+              <p className="text-2xl font-bold text-blue-900 mb-2">AB GM</p>
+              <p className="text-lg text-blue-700">
                 Ingenieurbüro für Lufthygiene und Wasserhygiene
               </p>
             </div>
-            <div className="flex space-x-8">
-              <span className="text-base text-gray-500 cursor-default hover:text-gray-700 hover:underline transition-colors">Impressum</span>
-              <span className="text-base text-gray-500 cursor-default hover:text-gray-700 hover:underline transition-colors">Datenschutz</span>
+            <div className="flex space-x-10">
+              <span className="text-lg text-blue-600 cursor-default hover:text-blue-800 hover:underline transition-all">Startseite</span>
+              <span className="text-lg text-blue-600 cursor-default hover:text-blue-800 hover:underline transition-all">Portrait</span>
+              <span className="text-lg text-blue-600 cursor-default hover:text-blue-800 hover:underline transition-all">Leistungen</span>
+              <span className="text-lg text-blue-600 cursor-default hover:text-blue-800 hover:underline transition-all">Kontakt</span>
+              <span className="text-lg text-blue-600 cursor-default hover:text-blue-800 hover:underline transition-all">Impressum</span>
+              <span className="text-lg text-blue-600 cursor-default hover:text-blue-800 hover:underline transition-all">Datenschutz</span>
             </div>
           </div>
         </div>
