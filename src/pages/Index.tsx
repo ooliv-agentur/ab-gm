@@ -43,18 +43,18 @@ const Index = () => {
               <div className="max-w-4xl mx-auto w-full flex-1">
                 <div className="space-y-8 sm:space-y-12">
                   <div className="space-y-6 sm:space-y-8">
-                    <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-blue-900 cursor-default hover:text-blue-700 transition-colors">Startseite</span>
-                    <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-blue-400 font-light cursor-default hover:text-blue-600 transition-colors">Portrait</span>
-                    <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-blue-400 font-light cursor-default hover:text-blue-600 transition-colors">Leistungen</span>
-                    <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-blue-400 font-light cursor-default hover:text-blue-600 transition-colors">Referenzen</span>
-                    <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-blue-900 cursor-default hover:text-blue-700 transition-colors">Kontakt</span>
+                    <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-blue-900 cursor-default hover:text-blue-700 transition-colors hover:underline">Startseite</span>
+                    <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-600 font-light cursor-default hover:text-blue-600 transition-colors hover:underline">Portrait</span>
+                    <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-600 font-light cursor-default hover:text-blue-600 transition-colors hover:underline">Leistungen</span>
+                    <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-600 font-light cursor-default hover:text-blue-600 transition-colors hover:underline">Referenzen</span>
+                    <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-blue-900 cursor-default hover:text-blue-700 transition-colors hover:underline">Kontakt</span>
                   </div>
 
                   {/* Contact Details in Menu */}
                   <div className="border-t border-blue-200 pt-8 sm:pt-12 mt-auto">
                     <div className="space-y-4 sm:space-y-6">
                       <p className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-medium text-blue-700 break-all">0621 – 733628</p>
-                      <p className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-medium text-blue-700 break-all">info@ab-gm.de</p>
+                      <a href="mailto:info@ab-gm.de" className="block text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-medium text-blue-700 break-all hover:text-blue-800 transition-colors">info@ab-gm.de</a>
                     </div>
                   </div>
                 </div>
@@ -173,7 +173,10 @@ const Index = () => {
                   <span className="text-base sm:text-lg text-gray-700">Gefährdungsbeurteilungen & Gutachten</span>
                 </li>
               </ul>
-              <p className="text-sm sm:text-base text-blue-400 font-light">Demnächst mehr erfahren</p>
+              <p className="text-sm sm:text-base text-blue-400 font-light flex items-center">
+                Demnächst mehr erfahren
+                <ArrowRight className="h-4 w-4 ml-2" />
+              </p>
             </div>
 
             <div className="bg-blue-50 p-6 sm:p-8 lg:p-10 border-2 border-blue-200 hover:bg-blue-100 hover:border-blue-300 transition-all duration-300 cursor-default rounded-lg">
@@ -192,7 +195,10 @@ const Index = () => {
                   <span className="text-base sm:text-lg text-gray-700">Gefährdungsanalyse bei Grenzwertüberschreitung</span>
                 </li>
               </ul>
-              <p className="text-sm sm:text-base text-blue-400 font-light">Demnächst mehr erfahren</p>
+              <p className="text-sm sm:text-base text-blue-400 font-light flex items-center">
+                Demnächst mehr erfahren
+                <ArrowRight className="h-4 w-4 ml-2" />
+              </p>
             </div>
 
             <div className="bg-blue-50 p-6 sm:p-8 lg:p-10 border-2 border-blue-200 hover:bg-blue-100 hover:border-blue-300 transition-all duration-300 cursor-default rounded-lg">
@@ -211,7 +217,10 @@ const Index = () => {
                   <span className="text-base sm:text-lg text-gray-700">VDI 2047-konforme Dokumentation</span>
                 </li>
               </ul>
-              <p className="text-sm sm:text-base text-blue-400 font-light">Demnächst mehr erfahren</p>
+              <p className="text-sm sm:text-base text-blue-400 font-light flex items-center">
+                Demnächst mehr erfahren
+                <ArrowRight className="h-4 w-4 ml-2" />
+              </p>
             </div>
 
             <div className="bg-blue-50 p-6 sm:p-8 lg:p-10 border-2 border-blue-200 hover:bg-blue-100 hover:border-blue-300 transition-all duration-300 cursor-default rounded-lg">
@@ -230,7 +239,10 @@ const Index = () => {
                   <span className="text-base sm:text-lg text-gray-700">Raumluftqualität nach BGR 128</span>
                 </li>
               </ul>
-              <p className="text-sm sm:text-base text-blue-400 font-light">Demnächst mehr erfahren</p>
+              <p className="text-sm sm:text-base text-blue-400 font-light flex items-center">
+                Demnächst mehr erfahren
+                <ArrowRight className="h-4 w-4 ml-2" />
+              </p>
             </div>
           </div>
         </div>
@@ -238,11 +250,11 @@ const Index = () => {
 
       <div className="border-t border-blue-100"></div>
 
-      {/* Legal Compliance - Pflichten & Recht */}
+      {/* Legal Compliance - Betreiberpflichten & gesetzliche Vorgaben */}
       <section className="py-16 sm:py-20 lg:py-24 xl:py-32 bg-blue-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-900 mb-8 sm:mb-12">Pflichten & Recht</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-900 mb-8 sm:mb-12">Betreiberpflichten & gesetzliche Vorgaben</h2>
             <p className="text-xl sm:text-2xl font-semibold text-blue-900 mb-6 sm:mb-8">
               Gesetzliche Pflicht – technisches Risiko – persönliche Verantwortung.
             </p>
